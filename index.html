@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="ZH-cn">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>运动宝贝</title>
+    <link rel="icon" href="./img/head.png">
+    <!-- 引入 iView css -->
+    <link href="https://cdn.bootcdn.net/ajax/libs/iview/3.5.4/styles/iview.css" rel="stylesheet">
+    <link rel="stylesheet" href="./css/index.css">
+</head>
+
+<body>
+    <div id="app">
+        <audio id="music" autoplay="autoplay" loop="loop" preload="auto" hidden="true"
+            src="./music/儿童歌曲 - 运动宝贝之歌 [mqms2].mp3"></audio>
+        <div class="apply">
+            <img src="./img/baby_phone.png" alt="" style="width: 60px;">
+            <div style="margin-top: -10px;">
+                <a href="#form">
+                    <div class="signUp"> 去报名 </div>
+                </a>
+            </div>
+        </div>
+        <div id="ad">
+            <row>
+                <i-col span="20">
+                    <div>限量推出特惠卡<span>￥100抵￥1000</span><br>前<span>100</span>名到中心可领取价值1688元大礼包</div>
+                </i-col>
+                <i-col span="4">
+                    <div class="close" @click="close">
+                        关闭
+                    </div>
+                </i-col>
+            </row>
+        </div>
+
+        <row>
+            <i-Col span="5">
+                <img class="logo" src="./img/logo.png" alt="">
+            </i-Col>
+            <i-col class="title" span="16">
+                <div class="title-text">
+                    <h1>运动宝贝国际早教&nbsp;来济阳啦！</h1>
+                </div>
+            </i-col>
+            <i-col span="3">
+                <div class="icon" @click="clickMusic">
+                    <Icon :type='type' size="25" :class="{music:typeflag}" />
+                </div>
+            </i-col>
+        </row>
+        <row>
+            <i-col span="24">
+                <Carousel autoplay v-model="value" loop autoplay-speed="2500">
+                    <Carousel-Item>
+                        <div class="demo-carousel"><img src="./img/background1.jpg" alt="" style="width: 100%;"></div>
+                    </Carousel-Item>
+                    <Carousel-Item>
+                        <div class="demo-carousel"><img src="./img/background2.jpg" alt="" style="width: 100%;"></div>
+                    </Carousel-Item>
+                    <Carousel-Item>
+                        <div class="demo-carousel"><img src="./img/background3.jpg" alt="" style="width: 100%;"></div>
+                    </Carousel-Item>
+                    <Carousel-Item>
+                        <div class="demo-carousel"><img src="./img/background4.jpg" alt="" style="width: 100%;"></div>
+                    </Carousel-Item>
+                    <Carousel-Item>
+                        <div class="demo-carousel"><img src="./img/background5.png" alt="" style="width: 100%;"></div>
+                    </Carousel-Item>
+                </Carousel>
+            </i-col>
+        </row>
+        <row>
+            <i-col span="24">
+                <div class="about">
+                    <img src="./img/aboutBq.png" alt="">
+                    <div style="margin-top: 50px;">
+                        <p class="about-head">GYMBABY</p>
+                        <p class="about-title">关于我们</p>
+                        <p class="about-text">
+                            运动宝贝08年入驻中国市场，<span>以用世界先进教育为使命，以专业赢得信任、爱心收获感动为理念，以打造全球专业早教品牌，
+                                让所有宝宝成为运动宝贝的一员为愿景，以把爱给宝宝为核心，</span>成功打造出拥有“三大特色五大体系十七种课程”的特色早教品牌。
+                            优质的教学质量和高品质的服务使GYMBABY赢得了家长们的信任和支持。<span>国际化、专业化、个性化</span>的GYMBABY现已成立了600余家早教中心,
+                            使众多中国家庭0~ 6岁的宝宝受到了更专业的早期教育。<span>运动宝贝是您给宝宝最棒的童年礼物。</span>
+                        </p>
+                    </div>
+                </div>
+            </i-col>
+        </row>
+        <row>
+            <i-col span="24">
+                    <video style="width: 100%; margin: 0 auto;" src="./video/抖音品牌介绍.mp4" controls autoplay muted></video>
+            </i-col>
+        </row>
+        <div style="padding: 20px;">
+            <row>
+                <i-col span="8">
+                    <div style="font-size: 0;"><img src="./img/1.png" alt="" style="width: 100%; height: 100px;"></div>
+                </i-col>
+                <i-col span="8">
+                    <div class="advantage">
+                        <p class="p1">01</p>
+                        <p class="p2">规模经营</p>
+                    </div>
+                </i-col>
+                <i-col span="8">
+                    <div style="font-size: 0;"><img src="./img/1.png" alt="" style="width: 100%; height: 100px;"></div>
+                </i-col>
+            </row>
+            <row>
+                <i-col span="8">
+                    <div class="advantage">
+                        <p class="p1">02</p>
+                        <p class="p2">高端品质</p>
+                    </div>
+                </i-col>
+                <i-col span="8">
+                    <div style="font-size: 0;"><img src="./img/1.png" alt="" style="width: 100%; height: 100px;"></div>
+                </i-col>
+                <i-col span="8">
+                    <div class="advantage">
+                        <p class="p1">03</p>
+                        <p class="p2">国际化</p>
+                    </div>
+                </i-col>
+            </row>
+            <row>
+                <i-col span="8">
+                    <div class="advantage" style="font-size: 0;"><img src="./img/1.png" alt=""
+                            style="width: 100%; height: 100px;"></div>
+                </i-col>
+                <i-col span="8">
+                    <div class="advantage">
+                        <p class="p1">04</p>
+                        <p class="p2">高成功率</p>
+                    </div>
+                </i-col>
+                <i-col span="8">
+                    <div style="font-size: 0;"><img src="./img/1.png" alt="" style="width: 100%; height: 100px;"></div>
+                </i-col>
+            </row>
+        </div>
+        <row>
+            <i-col span="24">
+                <row>
+                    <i-col span="24">
+                        <p class="about-head">GYMBABY</p>
+                        <p class="about-title">五大系列 十七种课程</p>
+                    </i-col>
+                </row>
+                <row>
+                    <i-col span="24">
+                        <div class="course" style="background-color: rgb(235, 102, 97); ">
+                            <row>
+                                <i-col span="8">
+                                    <p class="course-head" style="color: rgb(235, 102, 97);">
+                                        艺术课程</p>
+                                </i-col>
+                                <i-col span="16">
+                                    <p class="course1-text">
+                                        环球音乐 音乐表演 敲击音乐 美育音乐 运动音乐 创意手工</p>
+                                </i-col>
+                            </row>
+                        </div>
+                    </i-col>
+                </row>
+                <row>
+                    <i-col span="24">
+                        <div class="course" style="background-color: rgb(135, 62, 207);">
+                            <row>
+                                <i-col span="8">
+                                    <p class="course-head" style="color: rgb(135, 62, 207);">
+                                        运动课程</p>
+                                </i-col>
+                                <i-col span="16">
+                                    <p class="course-text">
+                                        GYM（运动） HAPPYGYM</p>
+                                </i-col>
+                            </row>
+                        </div>
+                    </i-col>
+                </row>
+                <row>
+                    <i-col span="24">
+                        <div class="course" style="background-color: rgb(0, 132, 255);">
+                            <row>
+                                <i-col span="8">
+                                    <p class="course-head font" style="color: rgb(0, 132, 255);">
+                                        生活实践课程</p>
+                                </i-col>
+                                <i-col span="16">
+                                    <p class="course-text"> 生活课 烘焙课 抚触课 感官课</p>
+                                </i-col>
+                            </row>
+                        </div>
+                    </i-col>
+                </row>
+                <row>
+                    <i-col span="24">
+                        <div class="course" style="background-color: rgb(98, 216, 75);">
+                            <row>
+                                <i-col span="8">
+                                    <p class="course-head font" style="color: rgb(98, 216, 75);">
+                                        能量突出课程</p>
+                                </i-col>
+                                <i-col span="16">
+                                    <p class="course-text">数学思维 趣味科学DIY 思维创想</p>
+                                </i-col>
+                            </row>
+                        </div>
+                    </i-col>
+                </row>
+                <row>
+                    <i-col span="24">
+                        <div class="course" style="background-color: rgb(235, 238, 66);">
+                            <row>
+                                <i-col span="8">
+                                    <p class="course-head" style="color: rgb(235, 238, 66); ">
+                                        语言课程</p>
+                                </i-col>
+                                <i-col span="16">
+                                    <p class="course-text">HAPPY英语 LIFE英语</p>
+                                </i-col>
+                            </row>
+                        </div>
+                    </i-col>
+                </row>
+            </i-col>
+        </row>
+        <row>
+            <i-col span="24">
+                <div id="form">
+                    <h1>填写报名信息：</h1>
+                    <div>
+                        <i-Form ref="aaa" :model="formInformation" :rules="ruleValidate" :label-width="80">
+                            <Form-Item label="姓名" prop="name">
+                                <i-Input type="text" v-model="formInformation.name" placeholder="填写你的姓名"></i-Input>
+                            </Form-Item>
+                            <Form-Item label="电话" prop="phone">
+                                <i-Input type="tel" v-model="formInformation.phone" placeholder="填写你的电话"></i-Input>
+                            </Form-Item>
+                            <Form-Item label="月龄" prop="age">
+                                <i-Input type="number" v-model="formInformation.age" placeholder="填写宝宝的月龄"></i-Input>
+                            </Form-Item>
+                            <Form-Item label="性别" prop="sex">
+                                <i-Select v-model="formInformation.sex" placeholder="选择宝宝的性别">
+                                    <i-Option value="男">男</i-Option>
+                                    <i-Option value="女">女</i-Option>
+                                </i-Select>
+                            </Form-Item>
+                            <Form-Item label="地址" prop="city">
+                                <i-Input type="text" v-model="formInformation.city" placeholder="填写你的的地址"></i-Input>
+                            </Form-Item>
+                            <Form-Item label="意向" prop="message">
+                                <Radio-Group v-model="formInformation.message">
+                                    <Radio label="托管"></Radio>
+                                    <Radio label="早教"></Radio>
+                                </Radio-Group>
+                            </Form-Item>
+                            <Form-Item>
+                                <i-Button @click="submit" type="primary">提交</i-Button>
+                                <i-Button @click="reset" style="margin-left: 8px">重置</i-Button>
+                            </Form-Item>
+                        </i-Form>
+                    </div>
+                </div>
+            </i-col>
+        </row>
+    </div>
+    <!-- 引入 Vue js -->
+    <script src="https://cdn.bootcdn.net/ajax/libs/vue/2.6.11/vue.min.js"></script>
+    <!-- 引入 iView js -->
+    <script src="https://cdn.bootcdn.net/ajax/libs/iview/3.5.4/iview.min.js"></script>
+    <script src="https://cdn.bootcdn.net/ajax/libs/axios/0.19.2/axios.min.js"></script>
+    <script src="./js/index.js"></script>
+</body>
+
+</html>

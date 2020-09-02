@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ZH-cn">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>报名信息列表</title>
+    <!-- import stylesheet -->
+    <link rel="stylesheet" href="https://unpkg.com/view-design/dist/styles/iview.css">
+</head>
+
+<body>
+    <div id="app">
+        <!-- 报名信息列表 -->
+        <i-Table border height="500" stripe :columns="columns1" :data="data1" ref="table"></i-Table>
+        <row>
+            <!-- 导出文档 -->
+            <i-col span="4">
+                <i-Button type="primary" size="large" @click="exportData" style="margin-top: 10px;margin-left: 10px;">
+                    <Icon type="ios-download-outline"></Icon>
+                    导出
+                </i-Button>
+            </i-col>
+            <!-- 分页 -->
+            <i-col span="20">
+                <div style="text-align: right;margin-right: 10px;">
+                    <Page :total="dataCount" :page-size="pageSize" @on-change="changepage"
+                        @on-page-size-change="changePageSize" :page-size-opts="pageSizeOpts" show-total show-sizer
+                        show-elevator style="margin-top: 10px;"></Page>
+                </div>
+            </i-col>
+        </row>
+    </div>
+    <!-- 引入 Vue js -->
+    <script src="https://cdn.bootcdn.net/ajax/libs/vue/2.6.11/vue.min.js"></script>
+    <!-- 引入 iView js -->
+    <script src="https://unpkg.com/view-design/dist/iview.min.js"></script>
+    <script src="https://cdn.bootcdn.net/ajax/libs/axios/0.19.2/axios.min.js"></script>
+    <script src="./js/informationList.js"></script>
+</body>
+
+</html>
